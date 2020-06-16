@@ -5,21 +5,34 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>JS Quiz</title>
 		<link rel="stylesheet" href="style.css" />
-		<script src="script.js"></script>
 	</head>
 	<header class="headStyle">
 		<a href="highscore.html">High Score</a>
 		<div class="timerStyle">Time: <span id="runningTimer">0</span></div>
 	</header>
 	<body>
-		<div id="intro"></div>
-		<div id="quiz"></div>
-		<div id="end">
-			<form class="initialsForm">
-				<label for="initials">Enter your initials:</label>
-				<input type="text" id="initials" name="initials" />
-				<input type="submit" value="Submit" />
-			</form>
+		<div class="container">
+			<div id="intro" class="introFormat">
+				<h1>JS Quiz!</h1>
+				<p>
+					Get as many questions answered correctly as you can. <br />
+					Your score will be the amount of time left at the end of the quiz.
+					<br />
+					For every incorrect answer given, an additional 10 seconds will be
+					removed from the timer. <br />
+					Good luck!
+				</p>
+				<button id="start">Start Quiz!</button>
+			</div>
+			<div id="quiz" class="quizFormat hide">quiz placeholder</div>
+			<div id="end" class="endFormat hide">
+				<form class="initialsForm">
+					<label for="initials">Enter your initials:</label>
+					<input type="text" id="initials" name="initials" />
+					<input type="submit" value="Submit" />
+				</form>
+			</div>
 		</div>
 	</body>
+	<script src="script.js"></script>
 </html>

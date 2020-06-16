@@ -1,9 +1,13 @@
-.initialsForm {
+.container {
 	text-align: center;
+	margin-top: 50px;
 }
 .timerStyle {
 	float: right;
 }
 .headStyle {
 	margin: 10px;
+}
+.hide {
+	display: none;
 }
