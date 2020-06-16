@@ -1,10 +1,11 @@
 var timerEl = document.getElementById("runningTimer"),
-	timeLeft = 0,
+	timeLeft = 5,
 	score,
 	beginning = document.getElementById("intro"),
 	middle = document.getElementById("quiz"),
 	end = document.getElementById("end"),
-	starter = document.querySelector("#start");
+	starter = document.querySelector("#start"),
+	submitScore = document.querySelector("#initials");
 
 starter.addEventListener("click", function () {
 	beginning.classList.add("hide");
@@ -23,4 +24,10 @@ starter.addEventListener("click", function () {
 		}, 1000);
 	}
 	timer();
+});
+submitScore.addEventListener("click", function () {
+	event.preventDefault();
+	var initial = document.querySelector("#initials").value;
+	localStorage.setItem("initials", initial);
+	consol.log(initial + "" + timeLeft);
 });
