@@ -43,6 +43,5 @@ submitScore.addEventListener("click", function () {
   event.preventDefault();
   var initial = document.querySelector("#initials").value;
   localStorage.setItem("initials", initial);
-  console.log(initial);
   window.location.href = "highscore.html";
 });
