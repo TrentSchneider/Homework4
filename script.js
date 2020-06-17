@@ -30,4 +30,5 @@ submitScore.addEventListener("click", function () {
   var initial = document.querySelector("#initials").value;
   localStorage.setItem("initials", initial);
   console.log(initial);
+  window.location.href = "highscore.html";
 });
