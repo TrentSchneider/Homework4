@@ -7,9 +7,8 @@ var timerEl = document.getElementById("runningTimer"),
   starter = document.querySelector("#start"),
   submitScore = document.querySelector("#submit"),
   qSpace = document.querySelector(".questionSpace"),
-  aSpace = document.getElementById("answerSpace"),
-  questionCount;
-
+  aSpace = document.querySelector(".answerSpace"),
+  questionCount = 0;
 starter.addEventListener("click", function () {
   beginning.classList.add("hide");
   middle.classList.remove("hide");
@@ -20,7 +19,7 @@ starter.addEventListener("click", function () {
       timeLeft--;
       timerEl.textContent = timeLeft;
 
-      if (timeLeft === 0 || questionCount < quizInfo.length) {
+      if (timeLeft === 0 || questionCount === quizInfo.length) {
         middle.classList.add("hide");
         end.classList.remove("hide");
         clearInterval(timerInterval);
@@ -28,18 +27,21 @@ starter.addEventListener("click", function () {
     }, 1000);
   }
   timer();
-  for (
-    let questionCount = 0;
-    questionCount < quizInfo.length;
-    questionCount++
-  ) {
-    // console.log(quizInfo[questionCount].question);
+  function loadQs() {
     var questionInsert = document.createElement("h5");
     questionInsert.textContent = quizInfo[questionCount].question;
-    // console.log(questionInsert);
     qSpace.appendChild(questionInsert);
+
+    for (let i = 0; i < quizInfo[questionCount].choices.length; i++) {
+      var answerInsert = document.createElement("button");
+      answerInsert.textContent = quizInfo[questionCount].choices[i];
+      aSpace.appendChild(answerInsert);
+    }
   }
+  loadQs();
 });
+
+// creates and stores initials and score followed by sending the user to highscore.html
 submitScore.addEventListener("click", function () {
   event.preventDefault();
   var scoreArray = JSON.parse(localStorage.getItem("highScore"));

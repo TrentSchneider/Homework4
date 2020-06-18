@@ -7,17 +7,17 @@ var quizInfo = [
   {
     question: "question 1",
     choices: ["answer A", "answer B", "answer C", "answer D"],
-    answer: "answer A",
+    answer: "answer B",
   },
   {
     question: "question 1",
     choices: ["answer A", "answer B", "answer C", "answer D"],
-    answer: "answer A",
+    answer: "answer C",
   },
   {
     question: "question 1",
     choices: ["answer A", "answer B", "answer C", "answer D"],
-    answer: "answer A",
+    answer: "answer D",
   },
   {
     question: "question 1",
