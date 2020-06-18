@@ -6,7 +6,7 @@ var timerEl = document.getElementById("runningTimer"),
   end = document.getElementById("end"),
   starter = document.querySelector("#start"),
   submitScore = document.querySelector("#submit"),
-  qSpace = document.getElementById("questionSpace"),
+  qSpace = document.querySelector(".questionSpace"),
   aSpace = document.getElementById("answerSpace"),
   questionCount;
 
@@ -33,9 +33,10 @@ starter.addEventListener("click", function () {
     questionCount < quizInfo.length;
     questionCount++
   ) {
-    console.log(quizInfo[questionCount].question);
-    var questionInsert = document.createElement("button");
+    // console.log(quizInfo[questionCount].question);
+    var questionInsert = document.createElement("h5");
     questionInsert.textContent = quizInfo[questionCount].question;
+    // console.log(questionInsert);
     qSpace.appendChild(questionInsert);
   }
 });
