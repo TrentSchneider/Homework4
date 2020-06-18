@@ -42,7 +42,16 @@ starter.addEventListener("click", function () {
 });
 submitScore.addEventListener("click", function () {
   event.preventDefault();
-  var initial = document.querySelector("#initials").value;
-  localStorage.setItem("initials", initial);
+  var scoreArray = JSON.parse(localStorage.getItem("highScore"));
+  if (scoreArray === null) {
+    scoreArray = [];
+  }
+  var initialToArray = document.querySelector("#initials").value;
+
+  scoreArray.push({ initials: initialToArray, score: timeLeft });
+  console.log(scoreArray);
+  var initialToStor = JSON.stringify(scoreArray);
+  console.log(scoreArray);
+  localStorage.setItem("highScore", initialToStor);
   window.location.href = "highscore.html";
 });
