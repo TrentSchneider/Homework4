@@ -8,12 +8,15 @@ var timerEl = document.getElementById("runningTimer"),
   submitScore = document.querySelector("#submit"),
   qSpace = document.querySelector(".questionSpace"),
   aSpace = document.querySelector(".answerSpace"),
+  rSpace = document.querySelector(".resultSpace"),
   questionCount = 0;
+
 starter.addEventListener("click", function () {
   beginning.classList.add("hide");
   middle.classList.remove("hide");
-  timeLeft = 5;
+  timeLeft = 10;
 
+  // sets the timer
   function timer() {
     var timerInterval = setInterval(function () {
       timeLeft--;
@@ -27,16 +30,51 @@ starter.addEventListener("click", function () {
     }, 1000);
   }
   timer();
+
+  // loads the questions and answers
   function loadQs() {
     var questionInsert = document.createElement("h5");
     questionInsert.textContent = quizInfo[questionCount].question;
     qSpace.appendChild(questionInsert);
 
+    // adds the answers to their own buttons
     for (let i = 0; i < quizInfo[questionCount].choices.length; i++) {
+      var answerDiv = document.createElement("div");
       var answerInsert = document.createElement("button");
-      answerInsert.textContent = quizInfo[questionCount].choices[i];
-      aSpace.appendChild(answerInsert);
+      var qNum = i + 1;
+      answerInsert.textContent =
+        qNum + ". " + quizInfo[questionCount].choices[i];
+      answerDiv.setAttribute("id", i);
+      aSpace.appendChild(answerDiv);
+      answerDiv.appendChild(answerInsert);
     }
+    // pull the answer from the button selection
+    aSpace.addEventListener("click", function (event) {
+      event.preventDefault();
+      if (event.target.matches("button")) {
+        var userPick =
+          quizInfo[questionCount].choices[event.target.parentElement.id];
+      }
+      console.log(userPick);
+      var correctA = "Correct!",
+        incorrectA = "Incorrect!",
+        answer;
+
+      if (userPick === quizInfo[questionCount].answer) {
+        answer = correctA;
+      } else {
+        answer = incorrectA;
+      }
+      function displayAnswer() {
+        var result = document.createElement("p");
+        result.textContent = answer;
+        rSpace.appendChild(result);
+      }
+      displayAnswer();
+      setTimeout(function () {
+        questionCount++;
+      }, 3000);
+    });
   }
   loadQs();
 });
