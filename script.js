@@ -54,44 +54,44 @@ starter.addEventListener("click", function () {
       aSpace.appendChild(answerDiv);
       answerDiv.appendChild(answerInsert);
     }
-    // pull the answer from the button selection
-    aSpace.addEventListener("click", function (event) {
-      event.preventDefault();
-      if (event.target.matches("button")) {
-        event.target.onclick = null;
-        var userPick =
-          quizInfo[questionCount].choices[event.target.parentElement.id];
-
-        console.log(userPick);
-        var correctA = "Correct!",
-          incorrectA = "Incorrect!",
-          answer;
-
-        if (userPick === quizInfo[questionCount].answer) {
-          answer = correctA;
-        } else {
-          answer = incorrectA;
-          timeLeft = timeLeft - 10;
-        }
-        function displayAnswer() {
-          var result = document.createElement("p");
-          result.textContent = answer;
-          rSpace.appendChild(result);
-        }
-        displayAnswer();
-        setTimeout(function () {
-          if (questionCount < quizInfo.length) {
-            questionCount++;
-            qSpace.innerHTML = "";
-            aSpace.innerHTML = "";
-            rSpace.innerHTML = "";
-            // loadQs();
-          }
-        }, 3000);
-      }
-    });
   }
   loadQs();
+  // pull the answer from the button selection
+  aSpace.addEventListener("click", function (event) {
+    event.preventDefault();
+    if (event.target.matches("button")) {
+      event.target.onclick = null;
+      var userPick =
+        quizInfo[questionCount].choices[event.target.parentElement.id];
+
+      console.log(userPick);
+      var correctA = "Correct!",
+        incorrectA = "Incorrect!",
+        answer;
+
+      if (userPick === quizInfo[questionCount].answer) {
+        answer = correctA;
+      } else {
+        answer = incorrectA;
+        timeLeft = timeLeft - 10;
+      }
+      function displayAnswer() {
+        var result = document.createElement("p");
+        result.textContent = answer;
+        rSpace.appendChild(result);
+      }
+      displayAnswer();
+      setTimeout(function () {
+        if (questionCount < quizInfo.length) {
+          questionCount++;
+          qSpace.innerHTML = "";
+          aSpace.innerHTML = "";
+          rSpace.innerHTML = "";
+          loadQs();
+        }
+      }, 3000);
+    }
+  });
 });
 
 // creates and stores initials and score followed by sending the user to highscore.html
