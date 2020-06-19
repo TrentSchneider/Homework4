@@ -14,7 +14,7 @@ var timerEl = document.getElementById("runningTimer"),
 starter.addEventListener("click", function () {
   beginning.classList.add("hide");
   middle.classList.remove("hide");
-  timeLeft = 30000;
+  timeLeft = 60;
 
   // sets the timer
   function timer() {
