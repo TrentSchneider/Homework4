@@ -14,7 +14,7 @@ var timerEl = document.getElementById("runningTimer"),
 starter.addEventListener("click", function () {
   beginning.classList.add("hide");
   middle.classList.remove("hide");
-  timeLeft = 30;
+  timeLeft = 30000;
 
   // sets the timer
   function timer() {
@@ -80,7 +80,13 @@ starter.addEventListener("click", function () {
         }
         displayAnswer();
         setTimeout(function () {
-          questionCount++;
+          if (questionCount < quizInfo.length) {
+            questionCount++;
+            qSpace.innerHTML = "";
+            aSpace.innerHTML = "";
+            rSpace.innerHTML = "";
+            // loadQs();
+          }
         }, 3000);
       }
     });
