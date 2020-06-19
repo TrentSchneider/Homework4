@@ -1,13 +1,41 @@
 .container {
-	text-align: center;
-	margin-top: 50px;
+  text-align: center;
+  margin-top: 50px;
 }
 .timerStyle {
-	float: right;
+  float: right;
 }
 .headStyle {
-	margin: 10px;
+  margin: 10px;
 }
 .hide {
-	display: none;
+  display: none;
+}
+a {
+  color: purple;
+}
+.card {
+  border: none;
+  margin-left: 25%;
+}
+button {
+  margin: 5px;
+}
+#scoreList {
+  margin: 0;
+  padding: 0;
+  padding-left: 5px;
+  border: solid;
+  border-color: gray;
+  border-width: 1px;
+  background-color: rgba(128, 0, 128, 0.281);
+}
+h5 {
+  margin: 4px;
+}
+.btn-info {
+  background-color: purple;
+}
+.noPad {
+  padding: 0;
 }

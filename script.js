@@ -51,6 +51,8 @@ function loadQs() {
     var answerDiv = document.createElement("div");
     var answerInsert = document.createElement("button");
     var qNum = i + 1;
+    answerInsert.setAttribute("type", "button");
+    answerInsert.setAttribute("class", "btn btn-info");
     answerInsert.textContent = qNum + ". " + quizInfo[questionCount].choices[i];
     answerDiv.setAttribute("id", i);
     answerInsert.setAttribute("id", i);
@@ -74,10 +76,11 @@ function displayAnswer() {
   }
   // sets timer to clear out whether the answer was correct or incorrect
   rSpace.innerHTML = answer;
+  rSpace.setAttribute("class", "font-weight-light");
   if (rSpace.innerHTML !== "") {
     setTimeout(function () {
       rSpace.innerHTML = "";
-    }, 1000);
+    }, 500);
   }
 }
 loadQs();

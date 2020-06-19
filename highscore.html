@@ -12,11 +12,39 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <header class="headStyle">
-      <a href="index.html">Return to Quiz</a>
-    </header>
-    <div id="scoreList"></div>
+  <body class="container">
+    <div class="row">
+      <div class="card col-6">
+        <div class="container">
+          <h2>High Scores</h2>
+          <div class="row">
+            <div class="col-12 noPad">
+              <div id="scoreList" class="text-left"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <button
+                id="return"
+                class="btn btn-sm btn-info float-left"
+                type="button"
+              >
+                Go Back
+              </button>
+            </div>
+            <div>
+              <button
+                id="clear"
+                class="btn btn-sm btn-info float-left"
+                type="button"
+              >
+                Clear High Score
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
   <script src="highScoreScript.js"></script>
 </html>
