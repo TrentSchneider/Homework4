@@ -9,6 +9,7 @@ var timerEl = document.getElementById("runningTimer"),
   qSpace = document.querySelector(".questionSpace"),
   aSpace = document.querySelector(".answerSpace"),
   rSpace = document.querySelector(".resultSpace"),
+  showScore = document.querySelector("#scoreDisp"),
   questionCount = 0;
 
 // transitions from initial prompt to the quiz
@@ -31,6 +32,7 @@ starter.addEventListener("click", function () {
         middle.classList.add("hide");
         end.classList.remove("hide");
         clearInterval(timerInterval);
+        showScore.textContent(timeLeft);
         if (timeLeft < 0) {
           timeLeft = 0;
         }
