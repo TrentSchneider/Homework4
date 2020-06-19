@@ -80,6 +80,8 @@ starter.addEventListener("click", function () {
         result.textContent = answer;
         rSpace.appendChild(result);
       }
+
+      // shows the user if their answer was correct or incorrect and loads the next question
       displayAnswer();
       setTimeout(function () {
         if (questionCount < quizInfo.length) {
