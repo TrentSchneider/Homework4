@@ -1,61 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>JS Quiz</title>
-		<link
-			rel="stylesheet"
-			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-			integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-			crossorigin="anonymous"
-		/>
-		<link rel="stylesheet" href="CSS/style.css" />
-		<script src="JS/quiz.js"></script>
-	</head>
-	<header class="headStyle">
-		<a href="highscore.html">High Score</a>
-		<div class="timerStyle">Time: <span id="runningTimer">0</span></div>
-	</header>
-	<body>
-		<div class="container">
-			<div id="intro" class="introFormat">
-				<h1>JS Quiz!</h1>
-				<p>
-					Get as many questions answered correctly as you can. <br />
-					Your score will be the amount of time left at the end of the quiz.
-					<br />
-					For every incorrect answer given, an additional 10 seconds will be
-					removed from the timer. <br />
-					Good luck!
-				</p>
-				<button id="start" type="button" class="btn btn-sm btn-info">
-					Start Quiz!
-				</button>
-			</div>
-			<div class="row d-flex justify-content-center">
-				<div class="col-4">
-					<div id="stage2" class="quizFormat hide">
-						<div class="questionSpace"></div>
-						<div class="answerSpace"></div>
-					</div>
-				</div>
-			</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Quiz</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <script src="JS/quiz.js"></script>
+  </head>
+  <header class="headStyle">
+    <a href="highscore.html">High Score</a>
+    <div class="timerStyle">Time: <span id="runningTimer">0</span></div>
+  </header>
+  <body>
+    <main class="container">
+      <setction id="intro" class="introFormat">
+        <h1>JS Quiz!</h1>
+        <p>
+          Get as many questions answered correctly as you can. <br />
+          Your score will be the amount of time left at the end of the quiz.
+          <br />
+          For every incorrect answer given, an additional 10 seconds will be
+          removed from the timer. <br />
+          Good luck!
+        </p>
+        <button id="start" type="button" class="btn btn-sm btn-info">
+          Start Quiz!
+        </button>
+      </setction>
+      <div class="row d-flex justify-content-center">
+        <div class="col-4">
+          <section id="stage2" class="quizFormat hide">
+            <div class="questionSpace"></div>
+            <div class="answerSpace"></div>
+          </section>
+        </div>
+      </div>
 
-			<div id="end" class="endFormat hide">
-				<h3>All Done!</h3>
-				<p>Your final score is: <span id="scoreDisp"></span></p>
-				<form class="initialsForm" method="POST">
-					<label for="initials" class="font-weight-bold"
-						>Enter your initials:</label
-					>
-					<input type="text" id="initials" name="initials" />
-					<button id="submit" type="button" class="btn btn-info">Submit</button>
-				</form>
-			</div>
-			<p class="resultSpace"></p>
-		</div>
-	</body>
+      <section id="end" class="endFormat hide">
+        <h3>All Done!</h3>
+        <p>Your final score is: <span id="scoreDisp"></span></p>
+        <form class="initialsForm" method="POST">
+          <label for="initials" class="font-weight-bold"
+            >Enter your initials:</label
+          >
+          <input type="text" id="initials" name="initials" />
+          <button id="submit" type="button" class="btn btn-info">Submit</button>
+        </form>
+      </section>
+      <p class="resultSpace"></p>
+    </main>
+  </body>
 
-	<script src="JS/script.js"></script>
+  <script src="JS/script.js"></script>
 </html>
