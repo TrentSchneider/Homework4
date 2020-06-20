@@ -44,9 +44,9 @@ starter.addEventListener("click", function () {
 
 // loads the questions and answers
 function loadQs() {
-	var questionInsert = document.createElement("h5");
-	console.log(questionCount);
+	var questionInsert = document.createElement("h4");
 	questionInsert.textContent = quizInfo[questionCount].question;
+	questionInsert.setAttribute("class", "text-left");
 	qSpace.appendChild(questionInsert);
 
 	// adds the answer choices to their own buttons
@@ -55,9 +55,10 @@ function loadQs() {
 		var answerInsert = document.createElement("button");
 		var qNum = i + 1;
 		answerInsert.setAttribute("type", "button");
-		answerInsert.setAttribute("class", "btn btn-info");
+		answerInsert.setAttribute("class", "btn btn-info text-left");
 		answerInsert.textContent = qNum + ". " + quizInfo[questionCount].choices[i];
 		answerDiv.setAttribute("id", i);
+		answerDiv.setAttribute("class", "float-left");
 		answerInsert.setAttribute("id", i);
 		aSpace.appendChild(answerDiv);
 		answerDiv.appendChild(answerInsert);
@@ -83,7 +84,7 @@ function displayAnswer() {
 	if (rSpace.innerHTML !== "") {
 		setTimeout(function () {
 			rSpace.innerHTML = "";
-		}, 500);
+		}, 1000);
 	}
 }
 loadQs();

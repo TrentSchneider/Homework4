@@ -29,7 +29,12 @@ if (listScoreArray != null) {
 	for (let i = 0; i < listScoreArray.length; i++) {
 		var insertScore = document.createElement("h5");
 		insertScore.textContent =
-			listScoreArray[i].initials + " " + listScoreArray[i].score;
+			i +
+			1 +
+			". " +
+			listScoreArray[i].initials +
+			" - " +
+			listScoreArray[i].score;
 		userScore.appendChild(insertScore);
 	}
 }
