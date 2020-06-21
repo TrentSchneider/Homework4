@@ -79,12 +79,7 @@ function displayAnswer() {
 		answer = correctA;
 	} else {
 		answer = incorrectA;
-		// if (timeLeft < 10) {
-		// 	var timeFix = 10 - timeLeft;
-		// 	timeLeft = timeLeft - timeFix;
-		// } else {
 		timeLeft = timeLeft - 10;
-		// }
 	}
 
 	// Displays whether the answer was correct or incorrect and then sets timer to remove message
